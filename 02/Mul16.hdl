@@ -1,0 +1,35 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Mul16.hdl
+
+/**
+ * Multiplies two 16-bit values.
+ * The most significant carry bit is ignored.
+ */
+
+CHIP Mul16 {
+    IN a[16], b[16];
+    OUT out1[16], out0[16];
+
+    PARTS:
+    Mux16(a=False, b=a, sel=b[0], out = prod0, out0[0]=prod0[0]);
+    Mux16(a=False, b=a, sel=b[1], out = prod1);
+    Mux16(a=False, b=a, sel=b[2], out = prod2);
+    Mux16(a=False, b=a, sel=b[3], out = prod3);
+    Mux16(a=False, b=a, sel=b[4], out = prod4);
+    Mux16(a=False, b=a, sel=b[5], out = prod5);
+    Mux16(a=False, b=a, sel=b[6], out = prod6);
+    Mux16(a=False, b=a, sel=b[7], out = prod7);
+    Mux16(a=False, b=a, sel=b[8], out = prod8);
+    Mux16(a=False, b=a, sel=b[9], out = prod9);
+    Mux16(a=False, b=a, sel=b[10], out = prod10);
+    Mux16(a=False, b=a, sel=b[11], out = prod11);
+    Mux16(a=False, b=a, sel=b[12], out = prod12);
+    Mux16(a=False, b=a, sel=b[13], out = prod13);
+    Mux16(a=False, b=a, sel=b[14], out = prod14);
+    Mux16(a=False, b=a, sel=b[15], out = prod15);
+
+    HalfAdder(a=prod0[1], b=prod1[0], sum=out0[1], c1);
+    HalfAdder(a=prod0[1], b=)
+}
