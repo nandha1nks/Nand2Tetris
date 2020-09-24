@@ -3,9 +3,9 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/a/Bit.tst
 
-load Bit.hdl,
-output-file Bit.out,
-compare-to Bit.cmp,
+load Reg1Bit.hdl,
+output-file Reg1Bit.out,
+compare-to Reg1Bit.cmp,
 output-list time%S1.4.1 in%B2.1.2 load%B2.1.2 out%B2.1.2;
 
 set in 0,

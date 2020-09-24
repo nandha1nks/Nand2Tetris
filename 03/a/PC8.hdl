@@ -1,0 +1,11 @@
+CHIP PC8 {
+    IN in[8],load,inc,reset;
+    OUT out[8];
+
+    PARTS:
+    Inc8(in = LASTout, out = INCout);
+    Mux8(a = LASTout, b = INCout, sel = inc, out = AINCout);
+    Mux8(a = AINCout, b = in, sel = load, out = LOADout);
+    Mux8(a = LOADout, b = false, sel = reset, out = RESETout);
+    Reg8Bit(in = RESETout, load = true, out = LASTout, out = out);
+}

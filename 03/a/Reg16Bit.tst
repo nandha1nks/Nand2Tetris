@@ -3,9 +3,9 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/a/Register.tst
 
-load Register.hdl,
-output-file Register.out,
-compare-to Register.cmp,
+load Reg16Bit.hdl,
+output-file Reg16Bit.out,
+compare-to Reg16Bit.cmp,
 output-list time%S1.4.1 in%D1.6.1 load%B2.1.2 out%D1.6.1;
 
 set in 0,

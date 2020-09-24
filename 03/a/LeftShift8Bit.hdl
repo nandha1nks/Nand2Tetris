@@ -1,0 +1,14 @@
+CHIP LeftShift8Bit {
+    IN in[8];
+    OUT out[8];
+
+    PARTS:
+    And(a = true, b = false , out = out[0]);
+    And(a = true, b = in[0] , out = out[1]);
+    And(a = true, b = in[1] , out = out[2]);
+    And(a = true, b = in[2] , out = out[3]);
+    And(a = true, b = in[3] , out = out[4]);
+    And(a = true, b = in[4] , out = out[5]);
+    And(a = true, b = in[5] , out = out[6]);
+    And(a = true, b = in[6] , out = out[7]);
+}

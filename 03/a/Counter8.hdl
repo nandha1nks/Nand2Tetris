@@ -1,0 +1,9 @@
+CHIP Counter8 {
+    IN in[8], sel, load;
+    OUT out[8];
+
+    PARTS:
+    AddSub16(a[0..7] = LASTout, a[8..15] = false, b[0]= true, b[1..15]=false, sel = sel, out[0..7] = ASout);
+    Mux8(a = ASout, b = in, sel = load, out = LOADout);
+    Reg8Bit(in = LOADout, load = true, out = LASTout, out = out);
+}

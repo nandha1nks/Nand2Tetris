@@ -1,0 +1,20 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/AddSub16.hdl
+
+/**
+ * Add/Sub two 16-bit values.
+ * The most significant carry bit is ignored.
+ */
+
+CHIP AddSub16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    Not16(in=b, out=NOTb);
+    Inc16(in=NOTb, out=Minusb);
+    Mux16(a=b, b=Minusb, sel=sel, out=Finalb);
+    Add16(a=a, b=Finalb, out=out);
+}

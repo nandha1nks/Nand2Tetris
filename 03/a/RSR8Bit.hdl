@@ -1,0 +1,11 @@
+CHIP RSR8Bit {
+    IN in[8], load, shift;
+    OUT out[8];
+
+
+    PARTS:
+    RightShift8Bit(in = LASTout, out = SHIFTout);
+    Mux8(a = LASTout, b = SHIFTout, sel = shift, out = ASout);
+    Mux8(a = ASout, b = in, sel = load, out = LOADout);
+    Reg8Bit(in = LOADout, load = true, out = LASTout, out = out);
+}

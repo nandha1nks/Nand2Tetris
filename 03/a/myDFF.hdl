@@ -1,0 +1,11 @@
+CHIP myDFF {
+    IN in, clk;
+    OUT out;
+
+    PARTS:
+    Not(in = in, out = NOTin);
+    Nand(a = in, b = clk, out = out1);
+    Nand(a = NOTin, b = clk, out = out2);
+    Nand(a = out1, b = out4, out = out3);
+    Nand(a = out2, b = out3, out = out4, out = out);
+}
