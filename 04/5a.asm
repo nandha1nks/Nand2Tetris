@@ -1,0 +1,12 @@
+(WHILE)
+@KBD
+D=M
+@WHILE
+D;JEQ
+@kbd
+M=D
+@WHILE
+0;JMP
+(END)
+@END
+0;JMP
